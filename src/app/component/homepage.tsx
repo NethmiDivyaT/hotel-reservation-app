@@ -194,13 +194,14 @@ const Homepage: React.FC = () => {
           ))}
         </div>
       </section>
+      {/* offers */}
       <section>
         <div className="grid grid-cols-3 gap-4 p-10">
-          <div className="col-span-1 bg-gray-100 p-4">
-          <h2>Offers &amp; Packages</h2>
-          <h3>Early Bird Offer</h3>
-          <p>Plan ahead and make your dream vacation a reality with 20% off.</p>
-          </div>
+            <div className="col-span-1 bg-gray-100 p-4 flex items-center justify-center flex-col text-center">
+            <h2 className="text-gray-900 text-2xl mb-3 ">OFFERS &amp; PACKAGES</h2>
+            <h3 className="text-gray-700 text-xl mb-3">Early Bird Offer</h3>
+            <p className="text-gray-500 text-lg ml-5 mr-5">Plan ahead and make your dream vacation a reality with 20% off.</p>
+            </div>
           <div className="col-span-2 bg-gray-500 p-4">
           <img
           src="/images/room1.jpg"
@@ -210,6 +211,39 @@ const Homepage: React.FC = () => {
           </div>
         </div>
       </section> 
+      {/*details*/}
+      <section>
+        <h1 className="text-gray-900 text-center" style={{fontSize:"30px"}}>HIGHLIGHTS OF HOTEL LUXGUARY</h1>
+        <div className="grid grid-cols-2 gap-4 p-10">
+          <div className="col-span-1 bg-gray-100 p-4 flex items-start justify-start flex-col text-center">
+            <img src="/images/bar.jpg" alt="bar" className="mb-8"/>
+            <h3 className="text-gray-700 text-xl mb-4 text-center">A GRAND CELEBRATION: WHERE MEMORIES TAKE ROOT</h3>
+            <p className="text-gray-500 text-lg">With us, a Grand celebration is more than just beautiful;
+           it’s an experience that enriches your celebration and begins a lifetime of shared memories. 
+           Let us make every moment extraordinary, honoring a love as timeless as yours.</p>
+          </div>
+          <div className="col-span-1 bg-gray-100 p-4 flex items-start justify-start flex-col text-center">
+          <img src="/images/gym.jpg" alt="gym" className="mb-8"/>
+            <h3 className="text-gray-700 text-xl mb-4 text-center">NURTURE YOUR WELL-BEING</h3>
+            <p className="text-gray-500 text-lg">Nurture your well-being during your stay at Le Grand Galle. 
+            Enjoy our fitness center to stay active at your convenience, and inquire about our yoga and meditation sessions 
+            available upon request. Speak to us about creating a personalized wellness experience tailored just for you.</p>
+          </div>
+          <div className="col-span-1 bg-gray-100 p-4 flex items-start justify-start flex-col text-center">
+          <img src="/images/pool.jpg" alt="pool" className="mb-8"/>
+            <h3 className="text-gray-700 text-xl mb-4 text-center">POOLSIDE BLISS</h3>
+            <p className="text-gray-500 text-lg">Unwind at our exquisite pool, a true sanctuary at Le Grand Galle. 
+              Surrounded by lush greenery, this expansive space invites you to relax all day. Sip a cocktail from the poolside bar, 
+              read a book, or simply soak up the sun while enjoying breathtaking views of the Galle Fort.</p>
+          </div>
+          <div className="col-span-1 bg-gray-100 p-4 flex items-start justify-start flex-col text-center">
+          <img src="/images/bathtub.jpg" alt="bathtub" className="mb-8"/>
+            <h3 className="text-gray-700 text-xl mb-4 text-center">REVIVE, RESTORE, AND REJUVENATE</h3>
+            <p className="text-gray-500 text-lg">A sanctuary of relaxation, our spa offers a serene escape where skilled therapists pamper you 
+              with indulgent Balinese treatments, creating an oasis to rejuvenate, mind, body, and soul.</p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

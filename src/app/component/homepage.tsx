@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const Homepage: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [currentPackageImage, setPackageCurrentImage] = useState(0);
   const [clickedImage, setClickedImage] = useState<number | null>(null);
 
   // Images for the slideshow
@@ -22,6 +23,14 @@ const Homepage: React.FC = () => {
     { src: "/images/Beach.jpg", title: "BEACHES" },
   ];
 
+
+    const roomPackageGallery = [
+    { src: "/images/room2.jpg", title: "Rooms" },
+    { src: "/images/room3.jpg", title: "Rooms" },
+    { src: "/images/room4.jpg", title: "Rooms" },
+    { src: "/images/room5.jpg", title: "Rooms" },
+  ];
+
   // Change the image every few seconds
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,6 +38,14 @@ const Homepage: React.FC = () => {
     }, 5000); 
     return () => clearInterval(interval); 
   }, [images.length]);
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPackageCurrentImage((prevImage) => (prevImage + 1) % roomPackageGallery.length);
+    }, 5000); 
+    return () => clearInterval(interval); 
+  }, [roomPackageGallery.length]);
 
   // Add scroll event listener to change the header background color
   useEffect(() => {
@@ -216,8 +233,8 @@ const Homepage: React.FC = () => {
         <h1 className="text-gray-900 text-center" style={{fontSize:"30px"}}>HIGHLIGHTS OF HOTEL LUXGUARY</h1>
         <div className="grid grid-cols-2 gap-4 p-10">
           <div className="col-span-1 bg-gray-100 p-4 flex items-start justify-start flex-col text-center">
-            <img src="/images/bar.jpg" alt="bar" className="mb-8"/>
-            <h3 className="text-gray-700 text-xl mb-4 text-center">A GRAND CELEBRATION: WHERE MEMORIES TAKE ROOT</h3>
+            <img src="/images/bar.jpg" alt="bar" className="mb-8 hover:shadow-md"/>
+            <h3 className="text-gray-700 text-xl mb-4 text-center relative">A GRAND CELEBRATION: WHERE MEMORIES TAKE ROOT</h3>
             <p className="text-gray-500 text-lg">With us, a Grand celebration is more than just beautiful;
            it’s an experience that enriches your celebration and begins a lifetime of shared memories. 
            Let us make every moment extraordinary, honoring a love as timeless as yours.</p>
@@ -243,6 +260,29 @@ const Homepage: React.FC = () => {
               with indulgent Balinese treatments, creating an oasis to rejuvenate, mind, body, and soul.</p>
           </div>
         </div>
+      </section>
+      {/*Room Packages*/}
+      <section>
+      <div id="homepage-image" className="relative">
+        <img
+          src={images[currentPackageImage]}
+          alt="Hotel Homepage"
+          className="w-full transition-opacity duration-1000 ease-in-out"
+          style={{ height: "700px" }}
+        />
+
+        {/* Dots Indicator */}
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {images.map((_, index) => (
+            <div
+              key={index}
+              className={`w-2 h-2 rounded-full ${
+                currentPackageImage === index ? "bg-yellow-600" : "bg-gray-200"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
       </section>
     </div>
   );

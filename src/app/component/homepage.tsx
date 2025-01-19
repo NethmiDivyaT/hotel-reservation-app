@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Homepage: React.FC = () => {
   const [currentImage, setCurrentImage] = useState(0);
@@ -155,19 +156,19 @@ const Homepage: React.FC = () => {
           <nav className="mt-10">
             <ul>
               <li className="p-4 border-b border-yellow-600 text-black hover:text-yellow-600">
-                <a href="#home">Home</a>
+              <Link href="/">Home</Link>
               </li>
               <li className="p-4 border-b border-yellow-600 text-black hover:text-yellow-600">
-                <a href="#accommodation">Accommodation</a>
+              <Link href="/accommodation">Accommodation</Link>
               </li>
               <li className="p-4 border-b border-yellow-600 text-black hover:text-yellow-600">
-                <a href="#dining">Dining</a>
+              <a href="#dining">Dining</a>
               </li>
               <li className="p-4 border-b border-yellow-600 text-black hover:text-yellow-600">
-                <a href="#gallery">Gallery</a>
+              <a href="#gallery">Gallery</a>
               </li>
               <li className="p-4 border-b border-yellow-600 text-black hover:text-yellow-600">
-                <a href="#contactus">Contact Us</a>
+              <a href="#contactus">Contact Us</a>
               </li>
             </ul>
           </nav>
